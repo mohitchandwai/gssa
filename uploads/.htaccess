@@ -1,0 +1,11 @@
+# Uploaded files are user-submitted (KYC photos, QR codes, payment
+# screenshots) — never let the web server execute anything in here as
+# code, no matter what extension a file was renamed to.
+<IfModule mod_php.c>
+  php_flag engine off
+</IfModule>
+<FilesMatch "\.(php|php\d|phtml|phar|cgi|pl|py|sh)$">
+  Require all denied
+</FilesMatch>
+Options -ExecCGI -Indexes
+AddType text/plain .php .phtml .phar

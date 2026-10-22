@@ -1,0 +1,11 @@
+# Block direct access to files that should never be downloaded.
+<FilesMatch "\.(sql|md|log)$">
+  Require all denied
+</FilesMatch>
+<Files "config.php">
+  Require all denied
+</Files>
+
+# Pretty-print PHP errors never leak to visitors in production — also set
+# APP_DEBUG to false in config.php before going live.
+php_flag display_errors off

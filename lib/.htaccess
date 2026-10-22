@@ -1,0 +1,3 @@
+# Nobody should ever request these PHP library files directly over the web
+# — they are only meant to be require()'d by the other pages.
+Require all denied
